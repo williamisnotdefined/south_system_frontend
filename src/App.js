@@ -18,7 +18,8 @@ function App() {
                     <Menu />
                     <MainRoutes />
                 </Router>
-                <ToastContainer draggablePercent={60} autoClose={1000} />
+
+                <ToastContainer position="bottom-right" draggablePercent={60} autoClose={1000} />
             </>
         </ThemeProvider>
     )

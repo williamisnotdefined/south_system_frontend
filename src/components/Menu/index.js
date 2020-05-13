@@ -1,20 +1,18 @@
 import React from 'react'
 
-import { MenuWrapper, DragonLogo, MenuList, MenuListItem } from './styles'
+import useWindowSize from '@services/hooks/useWindowSize'
 
-import dragonLogo from '@images/dragon.gif'
+import MenuDesktop from './Desktop'
+import MenuMobile from './Mobile'
 
 const Menu = () => {
-    return (
-        <MenuWrapper>
-            <DragonLogo src={dragonLogo} />
-            <MenuList>
-                <MenuListItem>Dragon List</MenuListItem>
-                <MenuListItem>Create Dragon</MenuListItem>
-                <MenuListItem>Logout</MenuListItem>
-            </MenuList>
-        </MenuWrapper>
-    )
+    const { width } = useWindowSize()
+
+    if (false && width > 720) {
+        return <MenuDesktop />
+    }
+
+    return <MenuMobile />
 }
 
 export default Menu
