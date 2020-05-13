@@ -5,6 +5,8 @@ import { ToastContainer } from 'react-toastify'
 
 import { GlobalStyle, theme } from '@styles'
 import history from '@services/history'
+import MainRoutes from '@routes'
+import Menu from '@components/Menu'
 
 function App() {
     return (
@@ -12,7 +14,10 @@ function App() {
             <>
                 <GlobalStyle />
 
-                <Router history={history}>oi</Router>
+                <Router history={history}>
+                    <Menu />
+                    <MainRoutes />
+                </Router>
                 <ToastContainer draggablePercent={60} autoClose={1000} />
             </>
         </ThemeProvider>

@@ -1,24 +1,20 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
 
-import { isAuthenticated } from '../helpers/auth'
+import { isAuthenticated } from '@helpers/auth'
 
-import * as notifier from '../services/notifier'
+import * as toastify from '@services/toastify'
 
 const redirectAlert = prop => {
-    notifier.error('Access denied.', 3000)
+    toastify.error('Access denied.', 3000)
 
-    return (
-        <Redirect to={{ pathname: '/login', state: { from: prop.location } }} />
-    )
+    return <Redirect to={{ pathname: '/login', state: { from: prop.location } }} />
 }
 
 const PrivateRoute = ({ component: Component, ...props }) => (
     <Route
         {...props}
-        render={prop =>
-            isAuthenticated() ? <Component {...prop} /> : redirectAlert(prop)
-        }
+        render={prop => (isAuthenticated() ? <Component {...prop} /> : redirectAlert(prop))}
     />
 )
 

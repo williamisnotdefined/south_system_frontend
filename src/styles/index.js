@@ -22,11 +22,16 @@ export const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased !important;
         text-rendering: optimizeLegibility !important;
         font-family: 'Montserrat', sans-serif;
+        background-color: ${({ theme }) => colors.brandGrey20};
+    }
+
+    ul {
+        list-style: none;
     }
 `
 
 export const theme = {
-    ...colors,
+    colors,
     getSpace,
     getSpaceNumber
 }
