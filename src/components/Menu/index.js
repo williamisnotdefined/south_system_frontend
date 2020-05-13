@@ -8,7 +8,7 @@ import MenuMobile from './Mobile'
 const Menu = () => {
     const { width } = useWindowSize()
 
-    if (false && width > 720) {
+    if (width > 720) {
         return <MenuDesktop />
     }
 

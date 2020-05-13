@@ -1,7 +1,8 @@
 import React, { useState, useCallback } from 'react'
 
-import { Container, DragonLogo } from './styles'
+import { Container, DragonLogo } from '../styles'
 import Hamburger from './Hamburger'
+import MobileModal from './MobileModal'
 
 import dragonLogo from '@images/dragon.gif'
 
@@ -12,10 +13,15 @@ const MenuDesktop = () => {
         setOpenModal(true)
     }, [])
 
+    const closeModal = useCallback(() => {
+        setOpenModal(false)
+    }, [])
+
     return (
         <Container>
             <DragonLogo src={dragonLogo} />
             <Hamburger onClick={openModal} />
+            <MobileModal isOpen={isOpenModal} closeModal={closeModal} />
         </Container>
     )
 }

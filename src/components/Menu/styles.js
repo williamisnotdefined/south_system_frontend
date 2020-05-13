@@ -30,6 +30,7 @@ export const Anchor = styled(NavLink)`
     position: relative;
     display: inline;
     color: ${({ theme }) => theme.colors.brandGrey100};
+    font-size: ${({ theme }) => theme.font.normal};
     font-weight: 600;
 
     &:after {

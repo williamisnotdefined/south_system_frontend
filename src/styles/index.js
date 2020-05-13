@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { colors, getSpace, getSpaceNumber } from './variables'
+import { colors, typography, getSpace, getSpaceNumber } from './variables'
 
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -34,6 +34,7 @@ export const GlobalStyle = createGlobalStyle`
 
 export const theme = {
     colors,
+    font: typography,
     getSpace,
     getSpaceNumber
 }

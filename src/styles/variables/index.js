@@ -1,4 +1,5 @@
 import colors from './colors'
 import getSpace, { getSpaceNumber } from './spacing'
+import typography from './typography'
 
-export { colors, getSpace, getSpaceNumber }
+export { colors, typography, getSpace, getSpaceNumber }

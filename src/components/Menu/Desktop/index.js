@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Container, DragonLogo, List, ListItem, Anchor } from './styles'
+import { Container, DragonLogo, List, ListItem, Anchor } from '../styles'
 
 import dragonLogo from '@images/dragon.gif'
 
