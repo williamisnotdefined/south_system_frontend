@@ -1,68 +1,40 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Desafio Front End South System
 
-## Available Scripts
+## How to run
 
-In the project directory, you can run:
+-   git clone https://github.com/wozzp/south_system_frontend.git
+-   yarn install
+-   yarn start
 
-### `yarn start`
+# Comportamentos
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Menu
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+-   Versão desktop acima de 720px de largura de tela
+-   Versão mobile abaixo de 720px de largura de tela
+    -   Ao clicar no hamburger abrirá uma modal
+    -   A modal deve fechar ao clicar no overlay ou botão de fechar ou ao clicar 'ESC'
 
-### `yarn test`
+## Lista de Dragões
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-   Breakpoints de responsividade em 900px e 720px de largura de tela
 
-### `yarn build`
+## Login
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   Dados de Login: user | 123456
+-   Após submeter o formulário de login será executado uma função que demorará 1 segundo para validar os dados,
+    simulando o asincronismo de uma requisição real
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Teste feito com
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   ESLint + Prettierrc
+-   Create React App
+-   StyledComponents
+-   useReducer + useContext ao invés de Redux
+    -   devido a complexidade do teste não exigir o uso de Redux,
+        acredito que para esse teste o uso dos Hooks seja mais simples e sucinto sem necessidade de usar 3 libs (redux, react-redux e redux-saga)
+-   Nenhum arquivo excede 150 linhas de código (Se eu não me engano é uma boa pratica que a South System adotou, posso estar enganado)
 
-### `yarn eject`
+## Styles
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+-   as cores, espaçamentos e tipografia foram modularizados com intuito de padronizar o layout
