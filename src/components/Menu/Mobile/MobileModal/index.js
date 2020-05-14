@@ -1,5 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Modal from 'react-modal'
+
+import useAuthenticated from '@services/hooks/useAuthenticated'
 import { Anchor } from '@components/Menu/styles'
 
 import { Header, Title, ModalList, ModalListItem, CloseAnchor } from './styles'
@@ -15,6 +18,8 @@ const customStyles = {
 }
 
 const MobileModal = ({ isOpen, closeModal }) => {
+    const isAuthenticated = useAuthenticated()
+
     return (
         <Modal isOpen={isOpen} onRequestClose={closeModal} style={customStyles} ariaHideApp={false}>
             <Header>
@@ -33,12 +38,19 @@ const MobileModal = ({ isOpen, closeModal }) => {
                 <ModalListItem>
                     <Anchor to="/new">- Create Dragon</Anchor>
                 </ModalListItem>
-                <ModalListItem>
-                    <Anchor to="/logout">- Logout</Anchor>
-                </ModalListItem>
+                {isAuthenticated && (
+                    <ModalListItem>
+                        <Anchor to="/logout">- Logout</Anchor>
+                    </ModalListItem>
+                )}
             </ModalList>
         </Modal>
     )
+}
+
+MobileModal.propTypes = {
+    isOpen: PropTypes.bool,
+    closeModal: PropTypes.func
 }
 
 export default MobileModal

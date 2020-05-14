@@ -11,6 +11,7 @@ export const Header = styled.div`
 
 export const Title = styled.h2`
     color: ${({ theme }) => theme.colors.brandGrey50};
+    font-size: ${({ theme }) => theme.font.big};
 `
 
 export const CloseAnchor = styled.a`

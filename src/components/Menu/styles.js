@@ -7,6 +7,7 @@ export const Container = styled.div`
     align-items: center;
     border-bottom: 1px solid ${({ theme }) => theme.colors.brandGrey50};
     padding: ${({ theme }) => theme.getSpace(4)};
+    margin-bottom: ${({ theme }) => theme.getSpace(6)};
 `
 
 export const DragonLogo = styled.img`
