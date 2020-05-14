@@ -9,8 +9,8 @@ const Input = props => {
 
 Input.propTypes = {
     name: PropTypes.string.isRequired,
-    placeholder: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired,
+    placeholder: PropTypes.string,
+    onChange: PropTypes.func,
     type: PropTypes.string
 }
 

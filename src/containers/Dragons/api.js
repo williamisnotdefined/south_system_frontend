@@ -1,7 +1,8 @@
 import api from '@services/api'
+import history from '@services/history'
+import * as toastify from '@services/toastify'
 
 import { Creators } from './index'
-import * as toastify from '@services/toastify'
 
 export async function loadDragons(dispatch) {
     dispatch(Creators.loadingDragons())
@@ -23,6 +24,23 @@ export async function deleteDragon(dispatch, id) {
         toastify.clear()
         toastify.success('Dragon removed successfully.')
     } catch (err) {
+        toastify.clear()
+        toastify.error('Error on delete dragon.', 3000)
+    }
+}
+
+export async function addDragon(dispatch, dragon) {
+    dispatch(Creators.setSavingDragon())
+    toastify.info('Adding dragon..')
+
+    try {
+        const newDragon = await api.post(`/`, dragon)
+        dispatch(Creators.addDragon(newDragon))
+        history.push('/')
+        toastify.clear()
+        toastify.success('Dragon removed successfully.')
+    } catch (err) {
+        dispatch(Creators.unsetSavingDragon())
         toastify.clear()
         toastify.error('Error on delete dragon.', 3000)
     }
