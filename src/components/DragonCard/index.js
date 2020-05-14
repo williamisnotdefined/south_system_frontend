@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
 
 import history from '@services/history'
 import { DragonContext } from '@containers/Dragons'
@@ -25,6 +26,10 @@ const DragonCard = ({ dragon }) => {
             <DeleteButton onClick={deleteHandle}>X</DeleteButton>
         </DragonCardStyle>
     )
+}
+
+DragonCard.propTypes = {
+    dragon: PropTypes.object
 }
 
 export default DragonCard

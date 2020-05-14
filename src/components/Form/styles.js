@@ -52,6 +52,7 @@ export const Button = styled.button.attrs(props => ({
 Button.propTypes = {
     loading: PropTypes.bool
 }
+
 Button.defaultProps = {
     type: 'submit'
 }

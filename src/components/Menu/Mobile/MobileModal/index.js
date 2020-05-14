@@ -31,16 +31,20 @@ const MobileModal = ({ isOpen, closeModal }) => {
 
             <ModalList>
                 <ModalListItem>
-                    <Anchor exact to="/">
+                    <Anchor exact to="/" onClick={closeModal}>
                         - Dragon List
                     </Anchor>
                 </ModalListItem>
                 <ModalListItem>
-                    <Anchor to="/new">- Create Dragon</Anchor>
+                    <Anchor to="/new" onClick={closeModal}>
+                        - Create Dragon
+                    </Anchor>
                 </ModalListItem>
                 {isAuthenticated && (
                     <ModalListItem>
-                        <Anchor to="/logout">- Logout</Anchor>
+                        <Anchor to="/logout" onClick={closeModal}>
+                            - Logout
+                        </Anchor>
                     </ModalListItem>
                 )}
             </ModalList>
