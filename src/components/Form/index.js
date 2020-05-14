@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { theme } from '@styles'
 import Loader from '@components/Loader'
 
-import { Form as FormStyle, Submit as SubmitStyle } from './styles'
+import { Form as FormStyle, Button as ButtonStyle } from './styles'
 
 const Form = ({ children, ...props }) => {
     return <FormStyle {...props}>{children}</FormStyle>
@@ -16,16 +16,16 @@ Form.propTypes = {
         .isRequired
 }
 
-const Submit = ({ loading, children }) => (
-    <SubmitStyle>
+const Button = ({ loading, children }) => (
+    <ButtonStyle>
         {children}
         {loading && <Loader size={theme.getSpace(3)} />}
-    </SubmitStyle>
+    </ButtonStyle>
 )
 
-Submit.propTypes = {
+Button.propTypes = {
     loading: PropTypes.bool,
     children: PropTypes.node
 }
 
-export { Form, Submit }
+export { Form, Button }

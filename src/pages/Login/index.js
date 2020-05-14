@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 import { Creators as AuthActions, AuthContext } from '@containers/Auth'
 
 import PageTitle from '@components/PageTitle'
-import { Form, Submit } from '@components/Form'
+import { Form, Button } from '@components/Form'
 import Input from '@components/Input'
 
 import { Container } from './styles'
@@ -39,7 +39,7 @@ export default function Login() {
                     placeholder="Type your password.."
                 />
 
-                <Submit loading={state.loading}>Entrar</Submit>
+                <Button loading={state.loading}>Entrar</Button>
             </Form>
         </Container>
     )

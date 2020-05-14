@@ -19,9 +19,9 @@ export const Form = styled.form`
     }
 `
 
-export const Submit = styled.button.attrs({
-    type: 'submit'
-})`
+export const Button = styled.button.attrs(props => ({
+    type: props.type
+}))`
     width: auto;
     border: 0;
     transition: background-color 0.4s ease-out;
@@ -49,6 +49,9 @@ export const Submit = styled.button.attrs({
     }
 `
 
-Submit.propTypes = {
+Button.propTypes = {
     loading: PropTypes.bool
+}
+Button.defaultProps = {
+    type: 'submit'
 }
