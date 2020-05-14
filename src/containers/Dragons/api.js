@@ -51,14 +51,23 @@ export async function editDragon(dispatch, dragon) {
     toastify.info('Adding dragon..')
 
     try {
-        const newDragon = await api.post(`/`, dragon)
-        dispatch(Creators.addDragon(newDragon))
+        const newDragon = await api.put(`/${dragon.id}`, dragon)
+        dispatch(Creators.editDragon(newDragon))
         history.push('/')
         toastify.clear()
-        toastify.success('Dragon removed successfully.')
+        toastify.success('Dragon edited successfully.')
     } catch (err) {
         dispatch(Creators.unsetSavingDragon())
         toastify.clear()
-        toastify.error('Error on delete dragon.', 3000)
+        toastify.error('Error on edit dragon.', 3000)
+    }
+}
+
+export async function loadDragon(dragonId) {
+    try {
+        return await api.get(`/${dragonId}`)
+    } catch (err) {
+        history.push('/')
+        toastify.error('Error on load dragon.', 3000)
     }
 }

@@ -10,11 +10,13 @@ import { Container, ListWrapper, LoaderWrapper } from './styles'
 
 export default function DragonList() {
     const { state, loadDragons } = useContext(DragonContext)
-    const { dragons, loadingList } = state
+    const { dragons, loadingList, firstLoad } = state
 
     useEffect(() => {
-        loadDragons()
-    }, [loadDragons])
+        if (firstLoad) {
+            loadDragons()
+        }
+    }, [loadDragons, firstLoad])
 
     return (
         <Container>
