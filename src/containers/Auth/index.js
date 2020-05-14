@@ -18,18 +18,18 @@ const Actions = {
     SET_USER: '@Auth/SET_USER',
     SET_PASSWORD: '@Auth/SET_PASSWORD',
 
-    REGISTER_USER: '@Auth/REGISTER_USER',
-    REGISTER_USER_SUCCESS: '@Auth/REGISTER_USER_SUCCESS',
-    REGISTER_USER_FAILURE: '@Auth/REGISTER_USER_FAILURE'
+    HANDLE_AUTH: '@Auth/HANDLE_AUTH',
+    HANDLE_AUTH_SUCCESS: '@Auth/HANDLE_AUTH_SUCCESS',
+    HANDLE_AUTH_FAILURE: '@Auth/HANDLE_AUTH_FAILURE'
 }
 
 const Creators = {
     setUser: user => ({ type: Actions.SET_USER, payload: user }),
     setPassword: pwd => ({ type: Actions.SET_PASSWORD, payload: pwd }),
 
-    registerUser: () => ({ type: Actions.REGISTER_USER }),
-    registerUserSuccess: () => ({ type: Actions.REGISTER_USER_SUCCESS }),
-    registerUserFailure: () => ({ type: Actions.REGISTER_USER_FAILURE })
+    handleAuth: () => ({ type: Actions.HANDLE_AUTH }),
+    handleAuthSuccess: () => ({ type: Actions.HANDLE_AUTH_SUCCESS }),
+    handleAuthFailure: () => ({ type: Actions.HANDLE_AUTH_FAILURE })
 }
 
 const reducer = (state, { type, payload }) => {
@@ -39,11 +39,11 @@ const reducer = (state, { type, payload }) => {
         case Actions.SET_PASSWORD:
             return { ...state, password: payload }
 
-        case Actions.REGISTER_USER:
+        case Actions.HANDLE_AUTH:
             return { ...state, loading: true }
-        case Actions.REGISTER_USER_SUCCESS:
+        case Actions.HANDLE_AUTH_SUCCESS:
             return { ...state, loading: false }
-        case Actions.REGISTER_USER_FAILURE:
+        case Actions.HANDLE_AUTH_FAILURE:
             return { ...initialState }
 
         default:
@@ -56,19 +56,19 @@ function AuthProvider(props) {
     const { user, password } = state
 
     const authenticateUser = async () => {
-        dispatch(Creators.registerUser())
+        dispatch(Creators.handleAuth())
 
         try {
             const loggedIn = await fakeAsyncLogin(user, password)
             // there is no else to this conditions, failure will fall in catch (fake async)
             if (loggedIn) {
                 setUserSession('123456', user)
-                dispatch(Creators.registerUserSuccess())
+                dispatch(Creators.handleAuthSuccess())
                 toastify.success('Welcome!')
                 history.push('/')
             }
         } catch (err) {
-            dispatch(Creators.registerUserFailure())
+            dispatch(Creators.handleAuthFailure())
             toastify.error('Wrong credentials.', 3000)
         }
     }
