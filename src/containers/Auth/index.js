@@ -1,10 +1,7 @@
-import React, { createContext, useReducer } from 'react'
+import React, { createContext, useReducer, useCallback } from 'react'
+import PropTypes from 'prop-types'
 
-import history from '@services/history'
-import * as toastify from '@services/toastify'
-import { setUserSession } from '@helpers/auth'
-
-import fakeAsyncLogin from './fakeAsyncLogin'
+import * as AuthRequest from './api'
 
 const initialState = {
     user: '',
@@ -51,32 +48,23 @@ const reducer = (state, { type, payload }) => {
     }
 }
 
-function AuthProvider(props) {
+function AuthProvider({ children }) {
     const [state, dispatch] = useReducer(reducer, initialState)
     const { user, password } = state
 
-    const authenticateUser = async () => {
-        dispatch(Creators.handleAuth())
-
-        try {
-            const loggedIn = await fakeAsyncLogin(user, password)
-            // there is no else to this conditions, failure will fall in catch (fake async)
-            if (loggedIn) {
-                setUserSession('123456', user)
-                dispatch(Creators.handleAuthSuccess())
-                toastify.success('Welcome!')
-                history.push('/')
-            }
-        } catch (err) {
-            dispatch(Creators.handleAuthFailure())
-            toastify.error('Wrong credentials.', 3000)
-        }
-    }
+    const authenticateUser = useCallback(
+        () => AuthRequest.authenticateUser(dispatch, user, password),
+        [user, password]
+    )
 
     return (
         <AuthContext.Provider value={{ state, dispatch, authenticateUser }}>
-            {props.children}
+            {children}
         </AuthContext.Provider>
     )
+}
+
+AuthProvider.propTypes = {
+    children: PropTypes.node
 }
 export { Creators, AuthContext, AuthProvider }

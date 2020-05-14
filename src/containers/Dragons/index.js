@@ -1,4 +1,5 @@
 import React, { createContext, useReducer, useCallback } from 'react'
+import PropTypes from 'prop-types'
 
 import sortDragons from '@helpers/sortDragon'
 
@@ -61,17 +62,22 @@ const reducer = (state, { type, payload }) => {
     }
 }
 
-function DragonsProvider(props) {
+function DragonsProvider({ children }) {
     const [state, dispatch] = useReducer(reducer, initialState)
 
     const loadDragons = useCallback(() => dragonRequest.loadDragons(dispatch), [])
     const deleteDragon = useCallback(dragonId => dragonRequest.deleteDragon(dispatch, dragonId), [])
-    const addDragon = useCallback(dragon => dragonRequest.addDragon(dispatch, dragon))
+    const addDragon = useCallback(dragon => dragonRequest.addDragon(dispatch, dragon), [])
 
     return (
         <DragonContext.Provider value={{ state, dispatch, loadDragons, deleteDragon, addDragon }}>
-            {props.children}
+            {children}
         </DragonContext.Provider>
     )
 }
+
+DragonsProvider.propTypes = {
+    children: PropTypes.node
+}
+
 export { Creators, DragonContext, DragonsProvider }

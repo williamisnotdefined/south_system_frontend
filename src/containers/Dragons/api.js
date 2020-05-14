@@ -45,3 +45,20 @@ export async function addDragon(dispatch, dragon) {
         toastify.error('Error on delete dragon.', 3000)
     }
 }
+
+export async function editDragon(dispatch, dragon) {
+    dispatch(Creators.setSavingDragon())
+    toastify.info('Adding dragon..')
+
+    try {
+        const newDragon = await api.post(`/`, dragon)
+        dispatch(Creators.addDragon(newDragon))
+        history.push('/')
+        toastify.clear()
+        toastify.success('Dragon removed successfully.')
+    } catch (err) {
+        dispatch(Creators.unsetSavingDragon())
+        toastify.clear()
+        toastify.error('Error on delete dragon.', 3000)
+    }
+}
