@@ -2,6 +2,7 @@ import React, { createContext, useReducer, useCallback } from 'react'
 import PropTypes from 'prop-types'
 
 import * as AuthRequest from './api'
+import { Actions } from './actionsCreators'
 
 const initialState = {
     user: '',
@@ -10,24 +11,6 @@ const initialState = {
 }
 
 const AuthContext = createContext(initialState)
-
-const Actions = {
-    SET_USER: '@Auth/SET_USER',
-    SET_PASSWORD: '@Auth/SET_PASSWORD',
-
-    HANDLE_AUTH: '@Auth/HANDLE_AUTH',
-    HANDLE_AUTH_SUCCESS: '@Auth/HANDLE_AUTH_SUCCESS',
-    HANDLE_AUTH_FAILURE: '@Auth/HANDLE_AUTH_FAILURE'
-}
-
-const Creators = {
-    setUser: user => ({ type: Actions.SET_USER, payload: user }),
-    setPassword: pwd => ({ type: Actions.SET_PASSWORD, payload: pwd }),
-
-    handleAuth: () => ({ type: Actions.HANDLE_AUTH }),
-    handleAuthSuccess: () => ({ type: Actions.HANDLE_AUTH_SUCCESS }),
-    handleAuthFailure: () => ({ type: Actions.HANDLE_AUTH_FAILURE })
-}
 
 const reducer = (state, { type, payload }) => {
     switch (type) {
@@ -67,4 +50,4 @@ function AuthProvider({ children }) {
 AuthProvider.propTypes = {
     children: PropTypes.node
 }
-export { Creators, AuthContext, AuthProvider }
+export { AuthContext, AuthProvider }

@@ -2,7 +2,7 @@ import api from '@services/api'
 import history from '@services/history'
 import * as toastify from '@services/toastify'
 
-import { Creators } from './index'
+import { Creators } from './actionsCreators'
 
 export async function loadDragons(dispatch) {
     dispatch(Creators.loadingDragons())

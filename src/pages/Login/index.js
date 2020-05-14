@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 
-import { Creators as AuthActions, AuthContext } from '@containers/Auth'
+import { AuthContext } from '@containers/Auth'
+import { Creators as AuthActions } from '@containers/Auth/actionsCreators'
 
 import PageTitle from '@components/PageTitle'
 import { Form, Button } from '@components/Form'

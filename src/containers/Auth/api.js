@@ -4,7 +4,7 @@ import * as toastify from '@services/toastify'
 import { setUserSession } from '@helpers/auth'
 import { USER_FAKE, PASSWORD_FAKE } from '@helpers/auth'
 
-import { Creators } from './index'
+import { Creators } from './actionsCreators'
 
 function fakeAsyncLogin(user, password) {
     return new Promise((resolve, reject) =>
