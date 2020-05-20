@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 import history from '@services/history'
 import { DragonContext } from '@containers/Dragons'
 
-import { DragonCard as DragonCardStyle, DragonImage, Name, Type, DeleteButton } from './styles'
-
 import DragonLord from '@images/dragon_lord.gif'
+
+import { DragonCard as DragonCardStyle, DragonImage, Name, Type, DeleteButton } from './styles'
 
 const DragonCard = ({ dragon }) => {
     const { deleteDragon } = useContext(DragonContext)
