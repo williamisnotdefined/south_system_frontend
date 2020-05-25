@@ -50,4 +50,4 @@ function AuthProvider({ children }) {
 AuthProvider.propTypes = {
     children: PropTypes.node
 }
-export { AuthContext, AuthProvider }
+export { AuthContext, AuthProvider, reducer, initialState }
