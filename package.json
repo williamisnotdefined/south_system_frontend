@@ -48,5 +48,16 @@
         "eslint-plugin-prettier": "^3.1.3",
         "eslint-plugin-react": "^7.20.0",
         "prettier": "^2.0.5"
+    },
+    "jest": {
+        "moduleNameMapper": {
+            "^@app(.*)$": "<rootDir>/src$1",
+            "^@components(.*)$": "<rootDir>/src/components$1",
+            "^@containers(.*)$": "<rootDir>/src/containers$1",
+            "^@helpers(.*)$": "<rootDir>/src/helpers$1",
+            "^@pages(.*)$": "<rootDir>/src/pages$1",
+            "^@routes(.*)$": "<rootDir>/src/routes$1",
+            "^@services(.*)$": "<rootDir>/src/services$1"
+        }
     }
 }

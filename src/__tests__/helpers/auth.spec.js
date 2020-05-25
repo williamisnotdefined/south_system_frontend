@@ -6,7 +6,7 @@ import {
     USER_FAKE,
     PASSWORD_FAKE,
     USER_TOKEN
-} from '../../helpers/auth'
+} from '@helpers/auth'
 
 describe('Helper auth', () => {
     it('should be able to getUser', () => {

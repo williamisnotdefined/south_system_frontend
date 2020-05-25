@@ -1,4 +1,4 @@
-import toLocaleString from '../../helpers/date'
+import toLocaleString from '@helpers/date'
 
 describe('Helper date', () => {
     it('it should normalize date', () => {

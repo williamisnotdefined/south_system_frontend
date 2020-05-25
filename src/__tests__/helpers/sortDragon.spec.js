@@ -1,4 +1,4 @@
-import sortDragons from '../../helpers/sortDragon'
+import sortDragons from '@helpers/sortDragon'
 
 describe('Helper dragons', () => {
     it('should be sort dragons', () => {

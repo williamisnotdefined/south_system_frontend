@@ -1,4 +1,4 @@
-import { setItem, getItem, removeItem } from '../../helpers/localStorage'
+import { setItem, getItem, removeItem } from '@helpers/localStorage'
 
 describe('Helper storage', () => {
     it('should be able set item in local storage', () => {
