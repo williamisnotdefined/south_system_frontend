@@ -74,4 +74,4 @@ DragonsProvider.propTypes = {
     children: PropTypes.node
 }
 
-export { DragonContext, DragonsProvider }
+export { DragonContext, DragonsProvider, initialState, reducer }

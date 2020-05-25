@@ -57,7 +57,7 @@ export default function Dragon({ match }) {
                 <Form onSubmit={onSubmit}>
                     <Input
                         value={name}
-                        name="user"
+                        name="name"
                         onChange={e => setName(e.target.value)}
                         placeholder="Type dragon name.."
                     />

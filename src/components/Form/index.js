@@ -12,8 +12,7 @@ const Form = ({ children, ...props }) => {
 
 Form.propTypes = {
     onSubmit: PropTypes.func.isRequired,
-    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element])
-        .isRequired
+    children: PropTypes.node.isRequired
 }
 
 const Button = ({ loading, children }) => (

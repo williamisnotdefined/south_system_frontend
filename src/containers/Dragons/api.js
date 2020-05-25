@@ -11,6 +11,7 @@ export async function loadDragons(dispatch) {
         const dragons = await api.get()
         dispatch(Creators.loadedDragons(dragons))
     } catch (err) {
+        dispatch(Creators.loadedDragons([]))
         toastify.error('Error on load dragons.', 3000)
     }
 }

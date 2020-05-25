@@ -40,6 +40,7 @@
     },
     "devDependencies": {
         "@craco/craco": "^5.6.4",
+        "axios-mock-adapter": "^1.18.1",
         "cross-env": "^7.0.2",
         "enzyme": "^3.11.0",
         "enzyme-adapter-react-16": "^1.15.2",
@@ -61,7 +62,9 @@
             "^@pages(.*)$": "<rootDir>/src/pages$1",
             "^@routes(.*)$": "<rootDir>/src/routes$1",
             "^@services(.*)$": "<rootDir>/src/services$1",
-            "^@styles(.*)$": "<rootDir>/src/styles$1"
+            "^@styles(.*)$": "<rootDir>/src/styles$1",
+            "^@images(.*)$": "<rootDir>/src/images$1",
+            "^@__mocks__(.*)$": "<rootDir>/src/__mocks__$1"
         }
     }
 }

@@ -80,6 +80,14 @@ describe('Container Auth', () => {
         })
     })
 
+    it('should set loading and loaded when auth is being done with success', () => {
+        let newState = reducer(initialState, Creators.handleAuth())
+        expect(newState.loading).toEqual(true)
+
+        newState = reducer(initialState, Creators.handleAuthSuccess())
+        expect(newState.loading).toEqual(false)
+    })
+
     it('should be able to handle failure auth with wrong credentials', async () => {
         const state = {
             ...initialState,
@@ -103,5 +111,13 @@ describe('Container Auth', () => {
             expect(dispatch).toHaveBeenNthCalledWith(1, Creators.handleAuth())
             expect(dispatch).toHaveBeenNthCalledWith(2, Creators.handleAuthFailure())
         })
+    })
+
+    it('should set loading and loaded when auth is being done with failure', () => {
+        let newState = reducer(initialState, Creators.handleAuth())
+        expect(newState.loading).toEqual(true)
+
+        newState = reducer(initialState, Creators.handleAuthFailure())
+        expect(newState.loading).toEqual(false)
     })
 })
