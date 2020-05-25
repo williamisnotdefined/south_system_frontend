@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Dragon List Page Render should render correctly 1`] = `
+<div
+  className="sc-AxmLO fOmAtm"
+>
+  <h1
+    className="sc-AxjAm gwODik"
+  >
+    Dragon List
+  </h1>
+  <ul
+    className="sc-fzozJi ghudOy"
+  >
+    <li
+      className="sc-AxhCb gfatYW"
+      onClick={[Function]}
+    >
+      <img
+        className="sc-AxhUy ZofuJ"
+        src="dragon_lord.gif"
+      />
+      <p
+        className="sc-AxgMl cpNlvo"
+      >
+        Green Dragon
+      </p>
+      <p
+        className="sc-AxheI cYcWID"
+      >
+        Green
+      </p>
+      <button
+        className="sc-Axmtr dZrOXu"
+        onClick={[Function]}
+      >
+        X
+      </button>
+    </li>
+    <li
+      className="sc-AxhCb gfatYW"
+      onClick={[Function]}
+    >
+      <img
+        className="sc-AxhUy ZofuJ"
+        src="dragon_lord.gif"
+      />
+      <p
+        className="sc-AxgMl cpNlvo"
+      >
+        Dragon Lord
+      </p>
+      <p
+        className="sc-AxheI cYcWID"
+      >
+        Red
+      </p>
+      <button
+        className="sc-Axmtr dZrOXu"
+        onClick={[Function]}
+      >
+        X
+      </button>
+    </li>
+  </ul>
+</div>
+`;

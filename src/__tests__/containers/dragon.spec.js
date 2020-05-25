@@ -32,7 +32,7 @@ const getDragonForm = contextValue => {
     return mount(
         <ThemeProvider theme={theme}>
             <DragonContext.Provider value={{ ...contextValue }}>
-                <DragonForm match={{ params: { id: 0 } }} />
+                <DragonForm match={{ params: { id: null } }} />
             </DragonContext.Provider>
         </ThemeProvider>
     )

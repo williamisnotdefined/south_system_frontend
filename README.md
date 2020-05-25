@@ -5,6 +5,7 @@
 -   git clone https://github.com/wozzp/south_system_frontend.git
 -   yarn install
 -   yarn start
+-   yarn test
 
 # Comportamentos
 
@@ -34,6 +35,7 @@
     -   devido a complexidade do teste não exigir o uso de Redux,
         acredito que para esse teste o uso dos Hooks seja mais simples e sucinto sem necessidade de usar 3 libs (redux, react-redux e redux-saga)
 -   Nenhum arquivo excede 150 linhas de código (Se eu não me engano é uma boa pratica que a South System adotou, posso estar enganado)
+-   JEST + Enzyme
 
 ## Styles
 

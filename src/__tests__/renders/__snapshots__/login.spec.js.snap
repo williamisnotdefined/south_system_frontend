@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Login Page Render should render correctly 1`] = `
+<div
+  className="sc-AxheI bzmUgQ"
+>
+  <h1
+    className="sc-AxjAm gwODik"
+  >
+    Login
+  </h1>
+  <form
+    className="sc-AxhUy iwSbOU"
+    onSubmit={[Function]}
+  >
+    <input
+      autoComplete="off"
+      className="sc-AxhCb hMENDW"
+      name="user"
+      onChange={[Function]}
+      placeholder="Type your user.."
+      type="text"
+      value=""
+    />
+    <input
+      autoComplete="off"
+      className="sc-AxhCb hMENDW"
+      name="password"
+      onChange={[Function]}
+      placeholder="Type your password.."
+      type="password"
+      value=""
+    />
+    <button
+      className="sc-AxgMl fgEWzF"
+      type="submit"
+    >
+      Entrar
+    </button>
+  </form>
+</div>
+`;
